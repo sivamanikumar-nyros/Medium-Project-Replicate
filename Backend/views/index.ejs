@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medium-Project</title>
+  <link rel="stylesheet" href="/css/bootstrap.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    body{
+
+      background-color: #dfcccc;
+    }
+    .jumbotron{
+      background-color: #f9b94a;
+    }
+    .StoryHeader{
+
+      
+    background: #2e6f7d;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 15px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    text-align: center;
+    margin-top: 3%;
+    font-size: 2em;
+
+
+    }
+    td, th {
+    padding: 11px;
+}
+
+    
+    #button{
+
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+    }
+
+  #button:hover, #button:focus {
+      border: 1px solid #333;
+      background-color:#2e6f7d;
+      color: #000;
+      border-radius: 25px;
+  }
+  .StoryFooter {
+    background: #2e6f7d;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 15px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    text-align: center;
+}
+table{
+
+background: #f5f5f5;
+    
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+    
+  </style>
+</head>
+<body>
+      
+         
+         
+      <div class="loginForm">
+      <div class="StoryHeader">
+    <p>Admin Login</p>
+    </div>
+        
+         <form method="POST" action="/adminLogin">
+            <table align="center">
+              <tr>
+                <td>
+                  <label>Username:</label>
+                </td>
+                <td>
+                  <input type="text" name="username" placeholder="username" class="form-control input-lg" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Password:</label>
+                </td>
+                <td>
+                  <input type="password" name="password" placeholder="password" class="form-control input-lg" required>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center">
+                  <input type="submit" value="login" id="button" class="btn-primary btn-lg">
+                </td>
+              </tr>
+            </table>
+          </form>
+
+
+      </div>
+      
+</div>
+<div class="StoryFooter">
+    <p>Thank you!</p>
+    </div>
+
+</body>
+</html>
