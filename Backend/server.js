@@ -120,6 +120,224 @@ app.post('/',(req,res)=>{
 	})
 })
 
+app.post('/collections',(req,res)=>{
+
+	adminstory.find({category:'Collections'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+app.post('/popular',(req,res)=>{
+
+	adminstory.find({category:'Popular'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+
+app.post('/health',(req,res)=>{
+
+	adminstory.find({category:'Health'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+
+app.post('/design',(req,res)=>{
+
+	adminstory.find({category:'Design'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+
+app.post('/Politics',(req,res)=>{
+
+	adminstory.find({category:'Politics'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+
+app.post('/self',(req,res)=>{
+
+	adminstory.find({category:'Self'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+
+app.post('/startups',(req,res)=>{
+
+	adminstory.find({category:'Startups'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+app.post('/tech',(req,res)=>{
+
+	adminstory.find({category:'Tech'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+
+app.post('/culture',(req,res)=>{
+
+	adminstory.find({category:'Culture'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+
+app.post('/news',(req,res)=>{
+
+	adminstory.find({category:'News'}, function(err, data){
+
+		if(err){
+
+			res.send('no stories')
+
+		}else{
+
+			console.log(data);
+			res.json({
+				status:"success",
+				story:data
+			});
+			
+		}
+
+	})
+})
+
+
 
 app.listen(5000, function () {
 console.log('app listening on port 5000')

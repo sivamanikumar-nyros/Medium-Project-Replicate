@@ -4,105 +4,121 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
-import Contact from "./Contact";
+
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle,
        Button,Row, Col,Container, Nav, NavItem} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 
- 
 class Home extends Component {
 
   constructor(props){
     super(props);
 
+    
     this.state = {
-      adminstory:[]
+      adminstory:[],
+      olderPost:{},
+      recentPost:{}
+      
     }
 
     axios.post('http://10.90.90.117:5000/').then(res=>{
 
-      if(res.data.status == "success"){
+      if(res.data.status === "success"){
 
+        
         this.setState({adminstory:res.data.story});
        console.log(this.state.adminstory);
+       
+
+        for (var x = 0; x < res.data.story.length; x++) {
+          if(res.data.story.length === x + 3){
+            this.setState({ recentPost: res.data.story[x] })
+          }
+        }
+
+        for (var y = 0; y < res.data.story.length; y++) {
+          if(res.data.story.length === y + 1){
+            this.setState({ olderPost: res.data.story[y] })
+          }
+        }
 
       }
-
-      
+  
     })
+
     
   }
 
-
-
-
   render() {
-      var row={
-        padding:"15px"
+
+
+    var row={
+        border:"2px solid black",
+        padding:"15px",
+        CardText:"center",
+
+
 
       }
 
-      var story = this.state.adminstory.map((d) => {
-        return (
-          <Row style={row}>
-           <Col sm="4">
-              <img src="ramayana.jpg" height="100px" width="100px"/>
-              {d.story_title}
-            
-            </Col>
-            <Col sm="8">{d.description}</Col>
-            
-          </Row>
-          
-        )
-        
-      });
-
-      console.log('story', story)
-  
 
     
-
     
+    var story = this.state.adminstory.map((d) => 
+
+            <Row style={row}>
+              <Col sm="4">
+                <img src="ramayana.jpg" height="100px" width="100px" alt="poster"/>
+              </Col>
+              <Col sm="8" key={d}>{d.description}<NavLink to="/Story">Read-more</NavLink></Col>
+            </Row>
+
+      );
+
+      
+   
     return (
-      <div>
-        <Container>
+      <HashRouter>
+    <Container>
         <Row>
+
           <Col sm="4">
             <Card>
-              <CardImg top width="100%" src="ram.jpg" alt="Card image cap" />
+              <CardImg top width="100%" src="ramayana.jpg" alt="Card image cap" />
               <CardBody>
-                <CardTitle>{}</CardTitle>
-                <CardSubtitle>{this.state.adminstory.description}</CardSubtitle>
-                <CardText>{this.state.adminstory.story}</CardText>
-                <Button>Read More</Button>
+                <CardTitle>{this.state.olderPost.title}</CardTitle>
+                <CardText>{this.state.olderPost.description}</CardText>
+                <NavLink to="/Story">Read-more</NavLink>
               </CardBody>
             </Card>
           </Col>
-
+         
           <Col sm="4">
-            {story}
             
+            {story}
 
           </Col>
           <Col sm="4">
-            <Card>
-              <CardImg top width="100%" src="ram.jpg" alt="Card image cap" />
+             <Card>
+              <CardImg top width="100%" src="ramayana.jpg" alt="Card image cap" />
               <CardBody>
-                <CardTitle>{this.state.adminstory.story_title}</CardTitle>
-                <CardSubtitle>{this.state.adminstory.description}</CardSubtitle>
-                <CardText>{this.state.adminstory.story}</CardText>
-                <Button>Read More</Button>
+                <CardTitle>{this.state.recentPost.title}</CardTitle>
+                <CardText>{this.state.recentPost.description}</CardText>
+                <NavLink to="/Story">Read-more</NavLink>
               </CardBody>
             </Card>
           </Col>
         </Row>
-      </Container>
 
-      </div>
+      
+
+      </Container> 
+</HashRouter>
+     
     );
   }
 }
- 
+
 export default Home;
