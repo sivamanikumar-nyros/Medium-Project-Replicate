@@ -32,7 +32,7 @@ class Popular extends Component {
        
 
         for (var x = 0; x < res.data.story.length; x++) {
-          if(res.data.story.length === x + 5){
+          if(res.data.story.length === x + 3){
             this.setState({ recentPost: res.data.story[x] })
           }
         }
@@ -69,7 +69,7 @@ class Popular extends Component {
 
             <Row style={row}>
               <Col sm="4">
-                <img src="ramayana.jpg" height="100px" width="100px" alt="poster"/>
+                <img src="popular.jpg" height="100px" width="100px" alt="poster"/>
               </Col>
               <Col sm="8" key={d}>{d.description}<NavLink to="/Story">Read-more</NavLink></Col>
             </Row>
@@ -85,7 +85,7 @@ class Popular extends Component {
 
           <Col sm="4">
             <Card>
-              <CardImg top width="100%" src="ramayana.jpg" alt="Card image cap" />
+              <CardImg top width="100%" src="popular.jpg" alt="Card image cap" />
               <CardBody>
                 <CardTitle>{this.state.olderPost.title}</CardTitle>
                 <CardText>{this.state.olderPost.description}</CardText>
@@ -101,7 +101,7 @@ class Popular extends Component {
           </Col>
           <Col sm="4">
              <Card>
-              <CardImg top width="100%" src="ramayana.jpg" alt="Card image cap" />
+              <CardImg top width="100%" src="popular.jpg" alt="Card image cap" />
               <CardBody>
                 <CardTitle>{this.state.recentPost.title}</CardTitle>
                 <CardText>{this.state.recentPost.description}</CardText>

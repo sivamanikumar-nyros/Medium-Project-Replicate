@@ -338,6 +338,37 @@ app.post('/news',(req,res)=>{
 })
 
 
+app.post('/findStory', (req,res)=>{
+	
+	adminstory.findOne({_id:req.body.get_id}, (err,data)=>{
+
+		if(err){
+
+			res.send("No data found");
+
+		}else{
+
+			console.log(data);
+
+			res.json({
+
+
+
+				status:"success",
+
+				findStory:data
+
+			});
+		}
+
+
+	})
+
+
+
+})
+
+
 
 app.listen(5000, function () {
 console.log('app listening on port 5000')

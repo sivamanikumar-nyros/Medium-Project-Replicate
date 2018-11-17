@@ -67,7 +67,7 @@ class Collections extends Component {
 
             <Row style={row}>
               <Col sm="4">
-                <img src="Collections.jpeg" height="100px" width="100px" alt="poster"/>
+                <img src="collections.jpg" height="100px" width="100px" alt="poster"/>
               </Col>
               <Col sm="8" key={d}>{d.description}<NavLink to="/Story">Read-more</NavLink></Col>
             </Row>
@@ -84,7 +84,7 @@ class Collections extends Component {
 
           <Col sm="4">
             <Card>
-              <CardImg top width="100%" src="Collections.jpeg" alt="Card image cap" />
+              <CardImg top width="100%" src="collections.jpg" alt="Card image cap" />
               <CardBody>
                 <CardTitle>{this.state.olderPost.title}</CardTitle>
                 <CardText>{this.state.olderPost.description}</CardText>
@@ -100,7 +100,7 @@ class Collections extends Component {
           </Col>
           <Col sm="4">
              <Card>
-              <CardImg top width="100%" src="Collections.jpeg" alt="Card image cap" />
+              <CardImg top width="100%" src="collections.jpg" alt="Card image cap" />
               <CardBody>
                 <CardTitle>{this.state.recentPost.title}</CardTitle>
                 <CardText>{this.state.recentPost.description}</CardText>
