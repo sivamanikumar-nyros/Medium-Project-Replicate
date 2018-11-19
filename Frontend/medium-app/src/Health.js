@@ -69,7 +69,7 @@ class Health extends Component {
               <Col sm="4">
                 <img src="health.jpeg" height="100px" width="100px" alt="poster"/>
               </Col>
-              <Col sm="8" key={d}>{d.description}<NavLink to="/Story">Read-more</NavLink></Col>
+              <Col sm="8" key={d}>{d.description}<NavLink to={'/Story/' + d._id}>Read-more</NavLink></Col>
             </Row>
 
       );
@@ -87,7 +87,7 @@ class Health extends Component {
               <CardBody>
                 <CardTitle>{this.state.olderPost.title}</CardTitle>
                 <CardText>{this.state.olderPost.description}</CardText>
-                <NavLink to="/Story">Read-more</NavLink>
+                <NavLink to={'/Story/' +this.state.olderPost._id}>Read-more</NavLink>
               </CardBody>
             </Card>
           </Col>
@@ -103,7 +103,7 @@ class Health extends Component {
               <CardBody>
                 <CardTitle>{this.state.recentPost.title}</CardTitle>
                 <CardText>{this.state.recentPost.description}</CardText>
-                <NavLink to="/Story">Read-more</NavLink>
+                <NavLink to={'/Story/' + this.state.recentPost._id}>Read-more</NavLink>
               </CardBody>
             </Card>
           </Col>
